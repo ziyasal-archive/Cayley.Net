@@ -1,7 +1,7 @@
 Cayley.Net
 ==========
 
-.Net Client for an open-source graph database Cayley
+.Net Client for an open-source graph database [Cayley](https://github.com/google/cayley)
 
 ##Sample
 
