@@ -10,24 +10,29 @@ Cayley.Net
   IGraphObject g = new GraphObject();
   
   // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
-  g.Vertex("Humphrey Bogart").All()
+  IGremlinQuery query=g.Vertex("Humphrey Bogart").All();
+  CayleyResponse response = client.Send(query);
   
   // `g` and `V` are synonyms for `graph` and `Vertex` respectively, as they are quite common.
-  g.V("Humphrey Bogart").All()
+  IGremlinQuery query=g.V("Humphrey Bogart").All();
+  CayleyResponse response = client.Send(query);
   
   // "Humphrey Bogart" is a name, but not an entity. Let's find the entities with this name in our dataset.
   // Follow links that are pointing In to our "Humphrey Bogart" node with the predicate "name".
-  g.V("Humphrey Bogart").In("name").All()
+  IGremlinQuery query = g.V("Humphrey Bogart").In("name").All();
+  CayleyResponse response = client.Send(query);
   
   // Notice that "name" is a generic predicate in our dataset. 
   // Starting with a movie gives a similar effect.
-  g.V("Casablanca").In("name").All()
+  IGremlinQuery query = g.V("Casablanca").In("name").All();
+  CayleyResponse response = client.Send(query);
 
   // Relatedly, we can ask the reverse; all ids with the name "Casablanca"
-  g.V().Has("name", "Casablanca").All()
-
+  IGremlinQuery query = g.V().Has("name", "Casablanca").All();
+  CayleyResponse response = client.Send(query);
+  
   // Let's get the list of actors in the film
-  IGremlinQuery query = g.V().Has("name", "Casablanca")
+  var query = g.V().Has("name", "Casablanca")
                 .Out("/film/film/starring")
                 .Out("/film/performance/actor")
                 .Out("name")
