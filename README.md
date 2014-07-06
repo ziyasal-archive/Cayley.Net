@@ -7,7 +7,7 @@ Cayley.Net
 
 ```csharp
   ICayleyClient client = new CayleyClient("http://localhost:64210/api/v1/query/gremlin");
-  IGremlinQueryBuilder g = new GremlinQueryBuilder();
+  IGraphObject g = new GraphObject();
   
   // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
   g.Vertex("Humphrey Bogart").All()
