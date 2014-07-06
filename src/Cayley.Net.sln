@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayley.Net", "Cayley.Net\Cayley.Net.csproj", "{EC5AB12A-B3AA-4D93-81BB-C98C7F5F1424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayley.Net.Console", "Cayley.Net.Console\Cayley.Net.Console.csproj", "{76F106C0-0F5A-43E8-AD14-71F00F97608A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayley.Net.Tests", "Cayley.Net.Tests\Cayley.Net.Tests.csproj", "{6F8AEB85-5FE5-4535-BB78-019C6AABEA30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC5AB12A-B3AA-4D93-81BB-C98C7F5F1424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5AB12A-B3AA-4D93-81BB-C98C7F5F1424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5AB12A-B3AA-4D93-81BB-C98C7F5F1424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5AB12A-B3AA-4D93-81BB-C98C7F5F1424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F106C0-0F5A-43E8-AD14-71F00F97608A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F106C0-0F5A-43E8-AD14-71F00F97608A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F106C0-0F5A-43E8-AD14-71F00F97608A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F106C0-0F5A-43E8-AD14-71F00F97608A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8AEB85-5FE5-4535-BB78-019C6AABEA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8AEB85-5FE5-4535-BB78-019C6AABEA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8AEB85-5FE5-4535-BB78-019C6AABEA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8AEB85-5FE5-4535-BB78-019C6AABEA30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
