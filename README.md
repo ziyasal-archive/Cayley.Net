@@ -6,9 +6,27 @@ Cayley.Net
 ##Sample
 
 ```csharp
-  // Let's get the list of actors in the film
   ICayleyClient client = new CayleyClient("http://localhost:64210/api/v1/query/gremlin");
   IGremlinQueryBuilder g = new GremlinQueryBuilder();
+  
+  // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
+  g.Vertex("Humphrey Bogart").All()
+  
+  // `g` and `V` are synonyms for `graph` and `Vertex` respectively, as they are quite common.
+  g.V("Humphrey Bogart").All()
+  
+  // "Humphrey Bogart" is a name, but not an entity. Let's find the entities with this name in our dataset.
+  // Follow links that are pointing In to our "Humphrey Bogart" node with the predicate "name".
+  g.V("Humphrey Bogart").In("name").All()
+  
+  // Notice that "name" is a generic predicate in our dataset. 
+  // Starting with a movie gives a similar effect.
+  g.V("Casablanca").In("name").All()
+
+  // Relatedly, we can ask the reverse; all ids with the name "Casablanca"
+  g.V().Has("name", "Casablanca").All()
+
+  // Let's get the list of actors in the film
   IGremlinQuery query = g.V().Has("name", "Casablanca")
                 .Out("/film/film/starring")
                 .Out("/film/performance/actor")
@@ -18,7 +36,7 @@ Cayley.Net
   CayleyResponse response = client.Send(query);
   System.Console.WriteLine(response.RawText); //response.RawText contains raw JSON data
   
-  // Let's use a morphism -- a pre-defined path stored in a variable -- as our linkage
+  //But this is starting to get long. Let's use a morphism -- a pre-defined path stored in a variable -- as our linkage
    var filmToActor = g.Morphism().Out("/film/film/starring").Out("/film/performance/actor");
    IGremlinQuery query = g.V()
                 .Has("name", "Casablanca")
