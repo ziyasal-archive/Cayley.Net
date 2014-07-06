@@ -10,7 +10,7 @@ namespace Cayley.Net.Console
         private static void Main()
         {
             ICayleyClient client = new CayleyClient("http://localhost:64210/api/v1/query/gremlin");
-            IGremlinQueryBuilder g = new GremlinQueryBuilder();
+            IGraphObject g = new GraphObject();
             IGremlinQuery query = g.V().Has("name", "Casablanca")
                 .Out("/film/film/starring")
                 .Out("/film/performance/actor")

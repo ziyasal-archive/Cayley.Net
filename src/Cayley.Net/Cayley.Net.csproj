@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CayleyClient.cs" />
-    <Compile Include="Dsl\GremlinQueryBuilder.cs" />
+    <Compile Include="Dsl\GraphObject.cs" />
     <Compile Include="Dsl\Gremlin\Back.cs" />
     <Compile Include="Dsl\Gremlin\Filter.cs" />
     <Compile Include="Dsl\Gremlin\FilterFormatters.cs" />
@@ -100,7 +100,7 @@
     <Compile Include="Dsl\Gremlin\Steps\StoreStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\TagStep.cs" />
     <Compile Include="Dsl\Gremlin\TypeFilter.cs" />
-    <Compile Include="Dsl\IGremlinQueryBuilder.cs" />
+    <Compile Include="Dsl\IGraphObject.cs" />
     <Compile Include="Extensions\AggregateExceptionExtensions.cs" />
     <Compile Include="ApiModels\CayleyResponse.cs" />
     <Compile Include="Http\HttpClient.cs" />

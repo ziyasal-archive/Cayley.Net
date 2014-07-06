@@ -12,11 +12,11 @@ namespace Cayley.Net.Tests
                                                    .Follow(g.Morphism().Out('/film/film/starring').Out('/film/performance/actor'))
                                                    .Out('name').All()";
 
-        private IGremlinQueryBuilder g;
+        private IGraphObject g;
 
         protected override void FinalizeSetUp()
         {
-            g = new GremlinQueryBuilder();
+            g = new GraphObject();
         }
 
         [Test]

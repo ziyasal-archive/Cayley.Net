@@ -2,7 +2,7 @@
 
 namespace Cayley.Net.Dsl
 {
-    public interface IGremlinQueryBuilder
+    public interface IGraphObject
     {
         IGremlinQuery V();
         IGremlinQuery V(params string[] nodeIds);

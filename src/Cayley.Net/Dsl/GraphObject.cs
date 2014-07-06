@@ -4,7 +4,7 @@ using Cayley.Net.Dsl.Gremlin;
 
 namespace Cayley.Net.Dsl
 {
-    public class GremlinQueryBuilder : IGremlinQueryBuilder
+    public class GraphObject : IGraphObject
     {
         public IGremlinQuery V()
         {
