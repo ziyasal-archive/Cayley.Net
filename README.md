@@ -13,24 +13,24 @@ Cayley.Net
   
   // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
   IGremlinQuery query=g.Vertex("Humphrey Bogart").All();
-  CayleyResponse response = client.Send(query);
+  CayleyResponse response = client.Send(query); //response.RawText contains raw JSON data
   
   // `g` and `V` are synonyms for `graph` and `Vertex` respectively, as they are quite common.
-  IGremlinQuery query=g.V("Humphrey Bogart").All();
+  var query=g.V("Humphrey Bogart").All();
   CayleyResponse response = client.Send(query);
   
   // "Humphrey Bogart" is a name, but not an entity. Let's find the entities with this name in our dataset.
   // Follow links that are pointing In to our "Humphrey Bogart" node with the predicate "name".
-  IGremlinQuery query = g.V("Humphrey Bogart").In("name").All();
+  var query = g.V("Humphrey Bogart").In("name").All();
   CayleyResponse response = client.Send(query);
   
   // Notice that "name" is a generic predicate in our dataset. 
   // Starting with a movie gives a similar effect.
-  IGremlinQuery query = g.V("Casablanca").In("name").All();
+  var query = g.V("Casablanca").In("name").All();
   CayleyResponse response = client.Send(query);
 
   // Relatedly, we can ask the reverse; all ids with the name "Casablanca"
-  IGremlinQuery query = g.V().Has("name", "Casablanca").All();
+  var query = g.V().Has("name", "Casablanca").All();
   CayleyResponse response = client.Send(query);
   
   // Let's get the list of actors in the film
@@ -41,17 +41,17 @@ Cayley.Net
                 .All();
 
   CayleyResponse response = client.Send(query);
-  System.Console.WriteLine(response.RawText); //response.RawText contains raw JSON data
+  System.Console.WriteLine(response.RawText);
   
   //But this is starting to get long. Let's use a morphism -- a pre-defined path stored in a variable -- as our linkage
    var filmToActor = g.Morphism().Out("/film/film/starring").Out("/film/performance/actor");
-   IGremlinQuery query = g.V()
+   var query = g.V()
                 .Has("name", "Casablanca")
                 .Follow(filmToActor)
                 .Out("name")
                 .All();
   CayleyResponse response = client.Send(query);
-  System.Console.WriteLine(response.RawText); //response.RawText contains raw JSON data
+  System.Console.WriteLine(response.RawText);
 ```
 
 
