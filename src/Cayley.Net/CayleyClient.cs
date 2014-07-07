@@ -1,7 +1,9 @@
-using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using Cayley.Net.ApiModels;
 using Cayley.Net.Dsl.Gremlin;
-using EasyHttp.Http;
+using Cayley.Net.Extensions;
 
 namespace Cayley.Net
 {
@@ -17,13 +19,14 @@ namespace Cayley.Net
         public CayleyResponse Send(IGremlinQuery query)
         {
             string queryText = query.ToQueryText();
-            var http = new HttpClient(_basePath);
-            http.Request.Accept = HttpContentTypes.ApplicationXWwwFormUrlEncoded;
-            HttpResponse httpResponse = http.Post("", queryText, "text/plain");
 
-            if (httpResponse.StatusCode == HttpStatusCode.OK)
+            HttpClient client = new HttpClient();
+            var content = new StringContent(queryText);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+            Task<HttpResponseMessage> task = client.PostAsync(_basePath, content);
+            if (task.Result.IsSuccessStatusCode)
             {
-                return new CayleyResponse { RawText = httpResponse.RawText };
+                return new CayleyResponse { RawText = task.Result.Content.ReadAsString() };
             }
 
             return default(CayleyResponse);
