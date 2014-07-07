@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GremlinContants.cs" />
-    <Compile Include="GremlinQueryBuilderTests.cs" />
+    <Compile Include="GremlinQueryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>

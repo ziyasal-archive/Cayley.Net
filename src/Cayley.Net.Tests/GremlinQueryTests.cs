@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace Cayley.Net.Tests
 {
-    public class GremlinQueryBuilderTests : TestBase
+    public class GremlinQueryTests : TestBase
     {
         public const string FOLLOW_WITH_MORPHISM_QUERY = @"g.V().Has('name', 'Casablanca')
                                                    .Follow(g.Morphism().Out('/film/film/starring').Out('/film/performance/actor'))
