@@ -16,7 +16,10 @@ namespace Cayley.Net.Console
                 .Out("/film/performance/actor")
                 .Out("name")
                 .All();
+            CayleyResponse response = client.Send(query);
+            System.Console.WriteLine(response.RawText);
 
+            System.Console.WriteLine("--------------------------------------------------------------------------------");
 
             var filmToActor = g.Morphism().Out("/film/film/starring").Out("/film/performance/actor");
             IGremlinQuery queryWithMorphism = g.V()
@@ -24,15 +27,14 @@ namespace Cayley.Net.Console
                 .Follow(filmToActor)
                 .Out("name")
                 .All();
-            CayleyResponse response = client.Send(query);
             CayleyResponse morpResponse = client.Send(queryWithMorphism);
-
-            System.Console.WriteLine(response.RawText);
+            System.Console.WriteLine(morpResponse.RawText);
 
             System.Console.WriteLine("--------------------------------------------------------------------------------");
 
-            System.Console.WriteLine(morpResponse.RawText);
-
+            string emitQuery = g.Emit(new {name = "ziya", age = 25, hasRoom = true});
+            CayleyResponse emitResponse = client.Send(emitQuery);
+            System.Console.WriteLine(emitResponse.RawText);
             System.Console.ReadLine();
         }
     }

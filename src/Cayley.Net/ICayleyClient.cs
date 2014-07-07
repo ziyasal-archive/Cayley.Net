@@ -7,5 +7,6 @@ namespace Cayley.Net
     {
      
         CayleyResponse Send(IGremlinQuery query);
+        CayleyResponse Send(string query);
     }
 }

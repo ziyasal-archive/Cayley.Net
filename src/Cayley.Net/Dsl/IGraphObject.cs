@@ -10,5 +10,6 @@ namespace Cayley.Net.Dsl
         IGremlinQuery Vertex();
         IGremlinQuery Vertex(params string[] nodeIds);
         IGremlinQuery Morphism();
+        string Emit(object data);
     }
 }

@@ -79,7 +79,6 @@
     <Compile Include="Dsl\Gremlin\Steps\BasicSteps.cs" />
     <Compile Include="Dsl\Gremlin\Steps\CopySplitStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\EmitPropertyStep.cs" />
-    <Compile Include="Dsl\Gremlin\Steps\EmitStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\ExceptStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\ExhaustMergeStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\FairMergeStep.cs" />

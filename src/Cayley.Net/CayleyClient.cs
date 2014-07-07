@@ -19,9 +19,13 @@ namespace Cayley.Net
         public CayleyResponse Send(IGremlinQuery query)
         {
             string queryText = query.ToQueryText();
+            return Send(queryText);
+        }
 
+        public CayleyResponse Send(string query)
+        {
             HttpClient client = new HttpClient();
-            var content = new StringContent(queryText);
+            var content = new StringContent(query);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
             Task<HttpResponseMessage> task = client.PostAsync(_basePath, content);
             if (task.Result.IsSuccessStatusCode)
