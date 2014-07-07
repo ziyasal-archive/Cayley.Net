@@ -96,9 +96,8 @@
     <Compile Include="Dsl\Gremlin\TypeFilter.cs" />
     <Compile Include="Dsl\IGraphObject.cs" />
     <Compile Include="ApiModels\CayleyResponse.cs" />
-    <Compile Include="Http\HttpClient.cs" />
     <Compile Include="Extensions\HttpContentExtensions.cs" />
-    <Compile Include="Http\IHttpClient.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="ICayleyClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

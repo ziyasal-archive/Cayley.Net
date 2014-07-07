@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using Cayley.Net.Dsl.Gremlin;
-using Newtonsoft.Json;
+using Cayley.Net.Extensions;
 
 namespace Cayley.Net.Dsl
 {
@@ -46,13 +45,7 @@ namespace Cayley.Net.Dsl
 
         public string Emit(object data)
         {
-            var serializer = new JsonSerializer();
-            var stringWriter = new StringWriter();
-            var writer = new JsonTextWriter(stringWriter) { QuoteName = false };
-            serializer.Serialize(writer, data);
-            writer.Close();
-            var json = stringWriter.ToString();
-            return string.Format("g.Emit({0})", json);
+            return string.Format("g.Emit({0})", data.ToEmitString());
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Cayley.Net.Dsl.Gremlin
             return new GremlinQuery(newQueryText, newParams, baseQuery.QueryDeclarations);
         }
 
-        public static string ToQueryText(this IGremlinQuery query)
+        public static string Build(this IGremlinQuery query)
         {
             string text = query.QueryText;
             if (query.QueryParameters == null) return text;

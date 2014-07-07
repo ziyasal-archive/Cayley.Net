@@ -19,7 +19,7 @@ namespace Cayley.Net.Dsl.Gremlin
 
         public string DebugQueryText
         {
-            get { return this.ToQueryText(); }
+            get { return this.Build(); }
         }
 
         string IGremlinQuery.QueryText

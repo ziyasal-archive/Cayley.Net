@@ -4,7 +4,7 @@ namespace Cayley.Net.Dsl.Gremlin.Steps
     {
         public static IGremlinQuery Follow(this IGremlinQuery query, IGremlinQuery morphismQuery)
         {
-            IGremlinQuery newQuery = query.AddBlock(string.Format(".Follow({0})", morphismQuery.ToQueryText()));
+            IGremlinQuery newQuery = query.AddBlock(string.Format(".Follow({0})", morphismQuery.Build()));
             return newQuery;
         } 
         

@@ -18,7 +18,7 @@ namespace Cayley.Net
 
         public CayleyResponse Send(IGremlinQuery query)
         {
-            string queryText = query.ToQueryText();
+            string queryText = query.Build();
             return Send(queryText);
         }
 
