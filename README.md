@@ -10,7 +10,7 @@ Cayley.Net
 ```csharp
   ICayleyClient client = new CayleyClient("http://localhost:64210/api/v1/query/gremlin");
   IGraphObject g = new GraphObject();
-  
+
   // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
   IGremlinQuery query=g.Vertex("Humphrey Bogart").All();
   CayleyResponse response = client.Send(query); //response.RawText contains raw JSON data
@@ -52,6 +52,10 @@ Cayley.Net
                 .All();
   CayleyResponse response = client.Send(query);
   System.Console.WriteLine(response.RawText);
+
+  //Add data programatically to the JSON result list. Can be any JSON type.
+  var query = g.Emit(new {name = "John Doe", age = 41, isActor = true});
+  CayleyResponse emitResponse = client.Send(query);
 ```
 
 
@@ -60,6 +64,7 @@ If you encounter a bug, performance issue, or malfunction, please add an [Issue]
 
 
 ##TODO
+- Improve Gremlin implementation (Basic steps implemented at the moment)
 - Add more tests
 - Strongly typed client
 - Add more documentation
