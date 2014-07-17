@@ -21,7 +21,7 @@ namespace Cayley.Net.Tests
         {
             IGremlinQuery query = g.V();
 
-            query.Build().Should().Be(GremlinContants.V);
+            query.Build().Should().Be("g.V()");
         }
 
         [Test]
@@ -29,7 +29,7 @@ namespace Cayley.Net.Tests
         {
             IGremlinQuery query = g.M();
 
-            query.Build().Should().Be(GremlinContants.M);
+            query.Build().Should().Be("g.Morphism()");
         }
 
         [Test]
