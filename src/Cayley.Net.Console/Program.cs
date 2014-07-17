@@ -32,7 +32,7 @@ namespace Cayley.Net.Console
 
             System.Console.WriteLine("--------------------------------------------------------------------------------");
 
-            string emitQuery = g.Emit(new {name = "ziya", age = 25, hasRoom = true});
+            string emitQuery = g.Emit(new {name = "John Doe", age = 25, hasRoom = true});
             CayleyResponse emitResponse = client.Send(emitQuery);
             System.Console.WriteLine(emitResponse.Content);
             System.Console.ReadLine();
