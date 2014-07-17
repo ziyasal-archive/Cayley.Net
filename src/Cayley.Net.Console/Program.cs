@@ -17,7 +17,7 @@ namespace Cayley.Net.Console
                 .Out("name")
                 .All();
             CayleyResponse response = client.Send(query);
-            System.Console.WriteLine(response.RawText);
+            System.Console.WriteLine(response.Content);
 
             System.Console.WriteLine("--------------------------------------------------------------------------------");
 
@@ -28,13 +28,13 @@ namespace Cayley.Net.Console
                 .Out("name")
                 .All();
             CayleyResponse morpResponse = client.Send(queryWithMorphism);
-            System.Console.WriteLine(morpResponse.RawText);
+            System.Console.WriteLine(morpResponse.Content);
 
             System.Console.WriteLine("--------------------------------------------------------------------------------");
 
             string emitQuery = g.Emit(new {name = "ziya", age = 25, hasRoom = true});
             CayleyResponse emitResponse = client.Send(emitQuery);
-            System.Console.WriteLine(emitResponse.RawText);
+            System.Console.WriteLine(emitResponse.Content);
             System.Console.ReadLine();
         }
     }

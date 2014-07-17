@@ -2,6 +2,6 @@
 {
     public class CayleyResponse
     {
-        public string RawText { get; set; }
+        public string Content { get; set; }
     }
 }

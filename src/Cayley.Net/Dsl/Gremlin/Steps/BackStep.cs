@@ -1,6 +1,6 @@
-﻿namespace Cayley.Net.Dsl.Gremlin
+namespace Cayley.Net.Dsl.Gremlin.Steps
 {
-    public static class Back
+    public static class BackStep
     {
         public static IGremlinQuery BackV(this IGremlinQuery query, string label)
         {

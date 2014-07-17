@@ -30,7 +30,7 @@ namespace Cayley.Net
             Task<HttpResponseMessage> task = client.PostAsync(_basePath, content);
             if (task.Result.IsSuccessStatusCode)
             {
-                return new CayleyResponse { RawText = task.Result.Content.ReadAsString() };
+                return new CayleyResponse { Content = task.Result.Content.ReadAsString() };
             }
 
             return default(CayleyResponse);

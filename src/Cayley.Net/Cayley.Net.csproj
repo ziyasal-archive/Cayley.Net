@@ -60,7 +60,6 @@
   <ItemGroup>
     <Compile Include="CayleyClient.cs" />
     <Compile Include="Dsl\GraphObject.cs" />
-    <Compile Include="Dsl\Gremlin\Back.cs" />
     <Compile Include="Dsl\Gremlin\Filter.cs" />
     <Compile Include="Dsl\Gremlin\FilterFormatters.cs" />
     <Compile Include="Dsl\Gremlin\FormattedFilter.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Dsl\Gremlin\Steps\AggregateStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\AllStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\AsStep.cs" />
+    <Compile Include="Dsl\Gremlin\Steps\BackStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\BasicSteps.cs" />
     <Compile Include="Dsl\Gremlin\Steps\CopySplitStep.cs" />
     <Compile Include="Dsl\Gremlin\Steps\EmitPropertyStep.cs" />
