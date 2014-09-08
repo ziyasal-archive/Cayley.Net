@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Cayley.Net</id>
+        <version>1.0.0</version>
+        <authors>ziyasal</authors>
+        <owners>ziyasal</owners>
+        <projectUrl>https://github.com/ziyasal/Cayley.Net</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>.Net Client for an open-source graph database Cayley</description>
+        <summary>.Net Client for an open-source graph database Cayley</summary>
+        <tags>cayley graph gremlin</tags>
+        <dependencies>
+            <dependency id="Microsoft.Net.Http" version="2.2.22" />
+            <dependency id="Newtonsoft.Json" version="6.0.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\BuildArtifacts\Cayley.Net\bin\net45\Cayley.Net.dll" target="lib\net45\Cayley.Net.dll" />
+    </files>
+</package>
