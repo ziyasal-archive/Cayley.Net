@@ -13,7 +13,7 @@ Cayley.Net
 
   // Start with only one vertex, the literal name "Humphrey Bogart", and retreive all of them.
   IGremlinQuery query=g.Vertex("Humphrey Bogart").All();
-  CayleyResponse response = client.Send(query); //response.RawText contains raw JSON data
+  CayleyResponse response = client.Send(query); //response.Content contains raw JSON data
   
   // `g` and `V` are synonyms for `graph` and `Vertex` respectively, as they are quite common.
   var query=g.V("Humphrey Bogart").All();
@@ -41,7 +41,7 @@ Cayley.Net
                 .All();
 
   CayleyResponse response = client.Send(query);
-  System.Console.WriteLine(response.RawText);
+  System.Console.WriteLine(response.Content);
   
   //But this is starting to get long. Let's use a morphism -- a pre-defined path stored in a variable -- as our linkage
    var filmToActor = g.Morphism().Out("/film/film/starring").Out("/film/performance/actor");
@@ -51,7 +51,7 @@ Cayley.Net
                 .Out("name")
                 .All();
   CayleyResponse response = client.Send(query);
-  System.Console.WriteLine(response.RawText);
+  System.Console.WriteLine(response.Content);
 
   //Add data programatically to the JSON result list. Can be any JSON type.
   var query = g.Emit(new {name = "John Doe", age = 41, isActor = true});
