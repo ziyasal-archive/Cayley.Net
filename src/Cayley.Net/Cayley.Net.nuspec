@@ -11,7 +11,6 @@
         <summary>.Net Client for an open-source graph database Cayley</summary>
         <tags>cayley graph gremlin</tags>
         <dependencies>
-            <dependency id="Microsoft.Net.Http" version="2.2.22" />
             <dependency id="Newtonsoft.Json" version="6.0.3" />
         </dependencies>
     </metadata>
