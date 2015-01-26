@@ -3,6 +3,8 @@ Cayley.Net
 
 .Net Client for an open-source graph database [Cayley](https://github.com/google/cayley)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/d4oynp026b2bnsya?svg=true)](https://ci.appveyor.com/project/ziyasal/cayley-net)
+
 > Cayley is an open-source graph inspired by the graph database behind [Freebase](http://freebase.com/) and Google's [Knowledge Graph](http://www.google.com/insidesearch/features/search/knowledge.html). Its goal is to be a part of the developer's toolbox where [Linked Data](http://linkeddata.org/) and graph-shaped data (semantic webs, social networks, etc) in general are concerned.
 
 ##Sample
