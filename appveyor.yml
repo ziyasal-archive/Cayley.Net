@@ -1,0 +1,15 @@
+configuration: Release
+branches:
+  only:
+    - master
+
+before_build:
+  - nuget restore src/Cayley.Net.sln
+
+build:
+  project: src/Cayley.Net.sln      
+  verbosity: minimal
+  
+test:
+  assemblies:
+    - '**\*.Tests.dll'
