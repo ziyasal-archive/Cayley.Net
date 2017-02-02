@@ -66,7 +66,6 @@ If you encounter a bug, performance issue, or malfunction, please add an [Issue]
 
 
 ##TODO
-- Improve Gremlin implementation (Basic steps implemented at the moment)
+- Improve Gremlin implementation
 - Add more tests
-- Strongly typed client
 - Add more documentation
